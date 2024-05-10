@@ -123,7 +123,7 @@ lakers_games = gamefinder.get_data_frames()[0]
 
 time_1 = dict()
 
-if range != '':
+if odd_range != '':
     start = int(odd_range) - 2
     end = int(odd_range) + 7
     combined_columns = []
@@ -143,8 +143,6 @@ for index, game_info in lakers_games.iterrows():
     game = game_info["MATCHUP"]
     plus = int(game_info['PLUS_MINUS'])
     points = int(game_info['PTS'])
-    print(f'PONTOS: {points}')
-    print(f'PLUS: {plus}')
 
 
     if "@" not in game:
@@ -192,7 +190,7 @@ print('-' * 50)
 
 
 for key, value in time_1.items():
-    if range != '' and mando in key:
+    if odd_range == '' and mando in key:
         print(f'{key.upper()}: {value}')
     else:
         if 'OPPONENT' in key:
